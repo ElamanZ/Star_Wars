@@ -1,54 +1,46 @@
-# React + TypeScript + Vite
+# 🌌 Star Wars Characters Catalog
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Приложение-каталог персонажей вселенной Star Wars, построенное на React + TypeScript с использованием компонентов от **shadcn/ui** и данных с **SWAPI**.
 
-Currently, two official plugins are available:
+## ⚙️ Функциональность
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- ✅ Просмотр списка персонажей
+- 🔍 Поиск по имени (с debounce ~300мс)
+- 👁️ Детальная информация в модальном окне
+- 🦴 Скелетоны при загрузке
+- ⚠️ Обработка ошибок
+- 🔁 Пагинация (вперёд / назад)
 
-## Expanding the ESLint configuration
+## 🛠️ Технологии
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **React + TypeScript**
+- **Vite**
+- **Tailwind CSS**
+- **shadcn/ui**
+- **@tanstack/react-query**
+- **axios**
+- **React Router v7**
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 🚀 Установка и запуск
+
+### 1. Клонируйте репозиторий
+
+```bash
+git clone https://github.com/ElamanZ/Star_Wars.git
+cd star-wars
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Установите зависимости
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+npm install
+```
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+### 3. Создайте файл .env
+**В корне проекта есть файл .env.example. Создайте файл .env на его основе**
+
+### 4. Запустите проект
+
+```bash
+npm run dev
 ```
