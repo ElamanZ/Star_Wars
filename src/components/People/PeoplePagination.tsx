@@ -23,14 +23,14 @@ export const PeoplePagination = ({
         <PaginationContent>
           <PaginationItem>
             <PaginationPrevious
-              href="#"
+              className="cursor-pointer"
               onClick={() => onPageChange(Math.max(1, page - 1))}
               disabled={page === 1}
             />
           </PaginationItem>
           <PaginationItem>
             <PaginationNext
-              href="#"
+              className="cursor-pointer"
               onClick={() => onPageChange(Math.min(totalPages, page + 1))}
               disabled={page === totalPages}
             />
