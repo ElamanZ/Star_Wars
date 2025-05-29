@@ -56,7 +56,9 @@ export const PeopleModal = ({ id }: Props) => {
             </p>
           </div>
           <DialogClose asChild>
-            <Button className="bg-[#8A96CA] hover:bg-[#7c85af]">Close</Button>
+            <Button className="bg-[#8A96CA] hover:bg-[#7c85af] cursor-pointer">
+              Close
+            </Button>
           </DialogClose>
         </DialogContent>
       )}

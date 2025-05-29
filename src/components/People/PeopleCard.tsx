@@ -10,7 +10,7 @@ export const PeopleCard = ({ person }: Props) => {
   const personData = person.properties ? person.properties : person;
   return (
     <>
-      <div className="bg-white flex w-60 h-[300px] flex-col border-b shadow-xl rounded-xl border">
+      <div className="bg-white flex w-60 h-[300px] flex-col border-b shadow-xl rounded-xl border cursor-pointer">
         <div className="aspect-square overflow-hidden relative">
           <img
             src={defaultPreview}
