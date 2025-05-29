@@ -11,7 +11,7 @@ const PeoplePage = () => {
   const [limit] = useState(10);
   const [search, setSearch] = useState("");
 
-  const debounsedSearch = useDebounce(search, 1000);
+  const debounsedSearch = useDebounce(search, 300);
 
   const { data, isLoading, error } = useFetchPeople({
     page,
@@ -28,12 +28,8 @@ const PeoplePage = () => {
       <div className="flex flex-wrap items-center justify-center gap-4 px-4">
         {isLoading ? (
           <PeopleSkeleton />
-        ) : data && data.results && data.results.length > 0 ? (
-          <PeopleList people={data.results} />
         ) : (
-          <div className="flex justify-center items-center">
-            People not found
-          </div>
+          data && <PeopleList people={data.results ?? data.result} />
         )}
       </div>
 

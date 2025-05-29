@@ -23,11 +23,15 @@ export const PeopleList = ({ people }: Props) => {
 
   return (
     <>
-      {people.map((person) => (
-        <div key={person.uid} onClick={() => handleCardClick(person.uid)}>
-          <PeopleCard person={person} />
-        </div>
-      ))}
+      {people.length === 0 ? (
+        <div className="flex justify-center items-center">People not found</div>
+      ) : (
+        people.map((person) => (
+          <div key={person.uid} onClick={() => handleCardClick(person.uid)}>
+            <PeopleCard person={person} />
+          </div>
+        ))
+      )}
 
       <Dialog open={!!id} onOpenChange={closeModal}>
         {id && <PeopleModal id={id} />}
