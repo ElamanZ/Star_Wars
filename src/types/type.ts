@@ -36,6 +36,13 @@ export type PeopleResponse = {
   result: PersonSummary[];
 };
 
+export type PersonResult = {
+  properties: Person;
+};
+export type PersonResponse = {
+  result: PersonResult;
+};
+
 export type PeopleFilterArgs = {
   page: number;
   limit: number;

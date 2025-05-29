@@ -2,11 +2,11 @@ import {
   DialogContent,
   DialogHeader,
   DialogTitle,
-  DialogDescription,
   DialogClose,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { useFetchPeopleById } from "@/services/fetchPeopleById";
+import defaultPreview from "@/assets/default_img.jpeg";
 
 type Props = {
   id: string;
@@ -22,32 +22,37 @@ export const PeopleModal = ({ id }: Props) => {
       ) : (
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
-            <DialogTitle className="text-2xl">
-              {person.properties.name}
-            </DialogTitle>
-            <DialogDescription>Character Information</DialogDescription>
+            <div className="aspect-square h-52 rounded-2xl overflow-hidden relative mt-4">
+              <img
+                src={defaultPreview}
+                alt="person-preview"
+                className="object-cover aspect-square w-full rounded-2xl"
+              />
+            </div>
+            <DialogTitle className=" text-2xl">{person.name}</DialogTitle>
           </DialogHeader>
           <div className="grid gap-2 py-4 text-sm">
+            <p>Character Information</p>
             <p>
-              <strong>Gender:</strong> {person.properties.gender}
+              <strong>Gender:</strong> {person.gender}
             </p>
             <p>
-              <strong>Height:</strong> {person.properties.height} cm
+              <strong>Height:</strong> {person.height} cm
             </p>
             <p>
-              <strong>Mass:</strong> {person.properties.mass} kg
+              <strong>Mass:</strong> {person.mass} kg
             </p>
             <p>
-              <strong>Birth Year:</strong> {person.properties.birth_year}
+              <strong>Birth Year:</strong> {person.birth_year}
             </p>
             <p>
-              <strong>Eye Color:</strong> {person.properties.eye_color}
+              <strong>Eye Color:</strong> {person.eye_color}
             </p>
             <p>
-              <strong>Hair Color:</strong> {person.properties.hair_color}
+              <strong>Hair Color:</strong> {person.hair_color}
             </p>
             <p>
-              <strong>Skin Color:</strong> {person.properties.skin_color}
+              <strong>Skin Color:</strong> {person.skin_color}
             </p>
           </div>
           <DialogClose asChild>
