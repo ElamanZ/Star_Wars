@@ -19,11 +19,25 @@ export type Person = {
   url: string;
 };
 
+export type PersonSummary = {
+  uid: string;
+  name?: string;
+  properties?: Person;
+  url?: string;
+};
+
 export type PeopleResponse = {
   message: string;
   total_records: number;
   total_pages: number;
   previous: string | null;
   next: string | null;
-  results: Person[];
+  results: PersonSummary[];
+  result: PersonSummary[];
+};
+
+export type PeopleFilterArgs = {
+  page: number;
+  limit: number;
+  name?: string;
 };

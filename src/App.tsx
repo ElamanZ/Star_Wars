@@ -1,6 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import People from "./pages/People";
+import PeoplePage from "./pages/PeoplePage";
 
 function App() {
   const queryClient = new QueryClient();
@@ -8,8 +8,8 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<People />} />
-          <Route path="/character/:id" element={<People />} />
+          <Route path="/" element={<PeoplePage />} />
+          <Route path="/people/:id" element={<PeoplePage />} />
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>
